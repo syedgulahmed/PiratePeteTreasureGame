@@ -7,6 +7,13 @@ package treasurehunt;
 
 public class Player {
     
+    /*
+        This class contains information about player including
+        firstname, surname, age, pirates points and dig points.
+        This class also contain getter and setters for accessing
+        and modifying it's all attributes
+    */
+    
     private String firstName;
     private String surname;
     private int age;

@@ -24,12 +24,13 @@ public class TreasureHunt {
         player = new Player[numberOfPlayers];
         getPlayersInfo(player);
         
+        //Initiate game object
         game = new Game(player, map);
         
         //Outlining game rules to the players
         displayGameRules();
         
-        //Display
+        //Statring game 
         game.gameInProgress();
         
         
@@ -41,8 +42,10 @@ public class TreasureHunt {
     
     private static int getNumberOfPlayers(){
         
+        //Method created get numbers of players that will play the game
         int numberOfPlayers;
         
+        //Using do while loop to conform the validity that numbers of players must be between 2 and 4 inclusive.
         do{
             System.out.print("Enter number of players in the game: ");
             numberOfPlayers = Integer.parseInt(scan.next());
@@ -58,19 +61,25 @@ public class TreasureHunt {
     
     private static void getPlayersInfo(Player[] player){
         
+        //Method for getting information of players
+        
         int numberOfPlayers = player.length;
+        
         
         for(int i = 0; i < numberOfPlayers; i++){
             
+            //Getting first name and surname of player
             player[i] = new Player();
             System.out.println("Player #" + (i+1));
             System.out.print("Enter first name and surname with spcae between two: ");
             player[i].setFirstName(scan.next());
             player[i].setSurname(scan.next());
             
+            //Getting age of player
             System.out.print("Enter age: ");
             player[i].setAge(Integer.parseInt(scan.next()));
             
+            //Making player's age is not less than 12 years
             if(player[i].getAge() < 12){
                 System.out.println("Sorry, you must be 12 or over to play this game.");
                 System.exit(0);
@@ -82,8 +91,11 @@ public class TreasureHunt {
     
     private static void displayGameRules(){
         
+        //Method created to dislay rules of the game.
+        
         ScreenOp.clearScreen();
         
+        //Stroing all the rules in a String array
         String rules[] = 
         {
             "GAME RULES:",
@@ -103,6 +115,7 @@ public class TreasureHunt {
             "Note: All players have been assigned 100 Pirate Points."
         };
     
+        //Printing the all stored rules in string array using for loop
         for(int i = 0; i < rules.length; i++){
             
             if(i > 1 && i < 11){

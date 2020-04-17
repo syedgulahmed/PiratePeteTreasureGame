@@ -5,6 +5,14 @@ import java.util.Scanner;
 
 public class ScreenOp {
     
+    /*
+        
+        This class contains screen related methods,
+        One is clear screen method, that is static, when called clear the screen
+        Other is promt enter key method, that is also static, when called pause the action unless Enter key is not pressed
+    
+    */
+    
     public static void clearScreen() {  
         try {
                 if( System.getProperty( "os.name" ).startsWith( "Window" ) ) {
